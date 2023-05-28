@@ -38,7 +38,7 @@ pipeline {
                     
         stage('Deploy') {
            steps {
-                sh label: '', script: "docker run -d --name ${JOB_NAME} -p 3.110.215.198:5000:5000 ${img}"
+                sh label: '', script: "docker run -d --name ${JOB_NAME} -p 5000:5000 ${img}"
           }
         }
 
