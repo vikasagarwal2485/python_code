@@ -39,7 +39,7 @@ pipeline {
         stage('Deploy') {
            steps {
                script {
-                   dockerCmd = 'docker run -d --name ${JOB_NAME} -p 5000:5000 ${img}'
+                   dockerCmd = 'docker run -d --name ${JOB_NAME} -p 5000:5000' + "${img}"
                    sshagent(['ec2-server-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@3.110.84.244 ${dockerCmd}"
                    }
