@@ -41,7 +41,7 @@ pipeline {
                script {
                    dockerCmd = 'docker run -d --name ${JOB_NAME} -p 5000:5000 ' + "${img}"
                    sshagent(['ec2-server-key']) {
-                        sh "ssh -o StrictHostKeyChecking=no ec2-user@3.110.84.244 ${dockerCmd}"
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@13.233.122.134 ${dockerCmd}"
                    }
                }
            }
